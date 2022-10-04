@@ -11,12 +11,10 @@ const AddCategory = (props) => {
 
     const onSubmit = (event) => {
         event.preventDefault();
-        console.log(value);
 
         if( value.trim().length <= 0 ) return;
 
-        props.setCategories(categories => [...categories, value]);
-
+        props.onAddCategory(value);
         setValue("");
     }
 

@@ -6,8 +6,8 @@ const GifExpertApp = () => {
 
     const [categories, setCategories] = useState([ "One Punch Man", "Dragon Ball" ]);
 
-    const onAddCategory = () => {
-        setCategories([...categories, 'One Piece']);
+    const onAddCategory = (value) => {
+        setCategories([...categories, value]);
     }
 
     return (
@@ -15,10 +15,8 @@ const GifExpertApp = () => {
             <h1> GifExpertApp </h1>
 
             <AddCategory 
-                setCategories={setCategories}
+                onAddCategory={onAddCategory}
             />
-
-            <button onClick={onAddCategory} > Agregar </button>
 
             <ol>
                 { 
