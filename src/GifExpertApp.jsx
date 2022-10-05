@@ -7,6 +7,11 @@ const GifExpertApp = () => {
     const [categories, setCategories] = useState([ "One Punch Man", "Dragon Ball" ]);
 
     const onAddCategory = (value) => {
+        if(categories.includes(value)) {
+            console.log("El valor ya está registrado")
+            return;
+        }
+
         setCategories([...categories, value]);
     }
 
@@ -20,8 +25,8 @@ const GifExpertApp = () => {
 
             <ol>
                 { 
-                    categories.map((category, i) => {
-                        return <li key={i}>{ category }</li>
+                    categories.map(category => {
+                        return <li key={category}>{ category }</li>
                     })
                 }
             </ol>
