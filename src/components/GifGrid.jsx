@@ -8,18 +8,24 @@ const GifGrid = (props) => {
     return (
         <>
             <h4>{props.category}</h4>
-            <div className="card-grid">
-                {
-                    images?.map(image => {
-                        return (
-                            <GifItem 
-                                key={image.id}
-                                {...image}
-                            />
-                        )
-                    })
-                }
-            </div>
+            {
+                isLoading ? (
+                    <h5>Cargando...</h5>
+                ) : (
+                    <div className="card-grid">
+                        {
+                            images?.map(image => {
+                                return (
+                                    <GifItem 
+                                        key={image.id}
+                                        {...image}
+                                    />
+                                )
+                            })
+                        }
+                    </div>
+                )
+            }
         </>
     )
 }
